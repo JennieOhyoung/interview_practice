@@ -1,6 +1,3 @@
-interview_practice
-==================
-
 Question pool:
 
 Hackbright questions
