@@ -469,12 +469,18 @@ analyze your runtime/space complexity,
 149. Write a function that helps cashier to give change back with as few coins as possible. Input is change need to be given back, output is minimum number of coins needed.
 
 
+150. write a function that determines for each pair if it’s an anagram or not
+for each pair of words your function will print to standard output (stdout) the value 1 if the pair is an anagram or 0 otherwise (one result per line)
+Note that your function will receive the following arguments:
+firstWords
+which is an array of strings giving the first word for each of the pairs
+secondWords
+which is an array of strings giving the corresponding second word
 
+151. 
+#151  Given an array of strings containing three types of braces: round (), square [] and curly {} Your task is to write a function that checks whether the braces in each string are correctly matched prints 1 to standard output (stdout) if the braces in each string are matched and 0 if they're not (one result per line) Note that your function will receive the following arguments: expressions which is an array of strings containing braces. expressions: [ ")(){}", "[]({})", "([])", "{()[]}", "([)]" ] => 0 1 1 1 0
 
-
-
-
-
+#152 Transpose matrix so that rows become columns and columns become rows.
 
 
 

@@ -179,36 +179,49 @@ def repeats(s):
 #1.6 Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
 class Matrix(object):
 
-    def __init__(self,matrix):
-        self.n = len(matrix)
-        self.m = len(matrix[0])
+    def __init__(self, matrix):
+        self.m = len(matrix)
+        self.n = len(matrix[0])
         self.matrix = matrix
 
     def __str__(self):
-        row = ""
-        for i in self.matrix:
-            row = row
-            for j in i:
-                row = row + " "+ str(j) +" "
-            row = row + "\n"
-        return row
+        output = ""
+        for row in self.matrix:
+            output = output + "["
+            for item in row:
+                output = output + " " + str(item) + " "
+            output = output + "]\n"
+        return output
 
     def rotate90CW(self):
-        for row in self.matrix:
-            columnlist.append([])        
-        for row in self.matrix:
-            columnindex=0
-            for cell in row:
-                columnlist[columnindex].append(cell)
-                columnindex += 1
-        newmatrix=[]
-        for col in columnlist:
-            newmatrix.append(reversed(col))
-        self.matrix=newmatrix
+        transposed = []
+        for row in range(len(self.matrix[0])):
+            transposed_row = []
+            for i in self.matrix:
+                transposed_row.append(i[row])
+            transposed.append(transposed_row[::-1])
+        return transposed
+
+    def rotate90CCW(self):
+        transposed = []
+        for row in range(len(self.matrix[0])):
+            transposed_row = []
+            for i in self.matrix:
+                transposed_row.append(i[row])
+            transposed.append(transposed_row)
+        return transposed[::-1]
+
+def print_matrix(matrix):
+    for i in matrix:
+        for j in i:
+            print j,
+        print
 
 matrix1 = Matrix([[1,2,3], [4,5,6], [7,8,9]])
-# print str(matrix1)
 
+print_matrix(matrix1.rotate90CW())
+print
+print_matrix(matrix1.rotate90CCW())
 
 #1.7 Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0.
 
@@ -273,8 +286,8 @@ def rotatedStringHasSubstring(s1,s2):
     doubles1 = 2*(s1)
     return is_substring(doubles1,s2)
 
-print is_substring(s1,s2)
-print rotatedStringHasSubstring(s1, s2)
+# print is_substring(s1,s2)
+# print rotatedStringHasSubstring(s1, s2)
 
 
 
