@@ -482,6 +482,8 @@ which is an array of strings giving the corresponding second word
 
 #152 Transpose matrix so that rows become columns and columns become rows.
 
+#153 Given 25 horses, find the fastest 3 with the least # of races. you can only race 5 at a time and you have no timer. 
+
 
 
 
