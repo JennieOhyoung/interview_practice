@@ -44,5 +44,3 @@ class Linked_list(object):
 
 
 
-
-

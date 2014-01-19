@@ -45,7 +45,6 @@ def seventh_round(sixth, matrix):
     final.sort()
     return final[:3]
 
-
 randomize_horses(x)
 first_five_rounds(x)
 sixth_round(matrix)
