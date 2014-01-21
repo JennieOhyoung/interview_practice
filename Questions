@@ -599,6 +599,8 @@ function when the input file is:
 
 
 
+#159 Implement a Poker Hand solver for 1 deck. 2 cards in hand. 5 cards on table. find the best hand given the shown cards.
+
 
 
 

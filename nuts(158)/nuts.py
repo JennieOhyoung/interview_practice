@@ -41,6 +41,8 @@ function when the input file is:
 1111,22222222,5,3333
 1000,12000,5,3000
 
+The answer is greater than 0 even if C>D*F.
+
 """
 
 # d = distance
@@ -55,8 +57,11 @@ function when the input file is:
 # 4: 7(d*f)
 # 5: 9(d*f)
 
+import math
+
 text = raw_input("Which input file would you like to use? ")
 
+# naive solution with single trips to and from oasis
 def max_nuts(d,n,f,c):
     if n < c:
         x = n - d*f
@@ -84,7 +89,33 @@ def max_nuts(d,n,f,c):
             x += (oasis - 2*(d*f))
             return x
 
-# print max_nuts(1111,22222222,5,3333)
+# print max_nuts(1000,3000,1,1000)
+
+# recursive solution reducing last trip to max x
+def max_nuts2(d,n,f,c):
+    if n <= c:
+        x = n - d*f
+        return x
+
+    trips = 2*(math.ceil(n/c)) - 1
+    cost_km = trips*f
+    check_point = c/trips
+    remaining_distance = d - check_point
+    consumed = check_point*cost_km
+    remaining_nuts = n - consumed
+
+    if check_point >= d:
+        return n - d*cost_km
+    return max_nuts2(remaining_distance, remaining_nuts, f, c)
+
+# print max_nuts2(1000,12000,5,3000)
+
+
+def test(d,n,f,c):
+    print str(max_nuts(d,n,f,c))+ " from fn1 and  " + str(max_nuts2(d,n,f,c)) + " from fn2 "
+
+# test(1000,12000,5,3000)
+
 
 def parser(text):
     f=open(text)
@@ -97,27 +128,18 @@ def parser(text):
 
     # solution = []
     for problem in text:
-        d = int(problem[0])
-        n = int(problem[1])
-        f = int(problem[2])
-        c = int(problem[3])
-        print max_nuts(d,n,f,c)
-    return
+        d = float(problem[0])
+        n = float(problem[1])
+        f = float(problem[2])
+        c = float(problem[3])
+        # print max_nuts(d,n,f,c)
+        print max_nuts2(d,n,f,c)
+
+    return 
 
 
 
 parser(text)
-
-
-
-
-
-
-
-
-
-
-
 
 
 
