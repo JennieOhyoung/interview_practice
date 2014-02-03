@@ -7,7 +7,7 @@
 from random import choice
 
 def generate_game():
-    list_a = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"]
+    list_a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
     list_b = ["heart", "spade", "diamond", "club"]
 
     a = []
@@ -58,28 +58,24 @@ def best_hand(table, hand):
     # print values
     # print suits
 
-# A is either 1 or 14
-# K is 13, Q is 12, J is 11
 
-    high_flush = [10, "J", "Q", "K", "A"]
+    high_flush = [10, 11, 12, 13, 1]
     if high_flush in values and 
 
 
 
+# def card_view():
 
 
 
-generate_game()
-best_hand(table, hand)
+def main():
+    generate_game()
+    best_hand(table, hand)
 
 
 
-
-
-
-
-
-
+if __name__ == '__main__':
+    main()
 
 
 

@@ -104,6 +104,11 @@ def max_nuts2(d,n,f,c):
     consumed = check_point*cost_km
     remaining_nuts = n - consumed
 
+    # if consumed >= n:
+    #     total_consumption = trips*d*f
+    #     x = 
+    #     return 
+
     if check_point >= d:
         return n - d*cost_km
     return max_nuts2(remaining_distance, remaining_nuts, f, c)
@@ -142,6 +147,17 @@ def parser(text):
 parser(text)
 
 
+
+"""
+karas
+def max_nuts(d,n,f,c):
+    max_trips = 2 * math.ceil(n / c) - 1
+    min_trips = 2 * math.floor(n / c) - 1
+    nuts_4_min_trips = min_trips * c
+    max_trips_ans = n - (max_trips * d * f)
+    min_trips_ans = nuts_4_min_trips - (min_trips * d * f)
+    return max(max_trips_ans, min_trips_ans)
+"""
 
 
 
