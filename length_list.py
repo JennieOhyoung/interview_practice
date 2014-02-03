@@ -1,4 +1,4 @@
-# given a list of consecutive numbers [1...n] where n is unknown, you have a probe function that returns boolean if prob(num) is in list. Find length of list without using built in function len()
+# given a list of consecutive numbers [1...n] where n is unknown, you know whether a number is in list. Find length of list without using built in function len()
 
 import random
 
