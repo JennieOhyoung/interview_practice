@@ -1,4 +1,4 @@
-# given a list of consecutive numbers [1...n] where n is unknown, you know whether a number is in list. Find length of list without using built in function len() or slicing. Do this in O(log n)
+# Given a list of consecutive numbers [1...n] where n is unknown, you only know whether a number is in list. Find length of list without using built in function len() or slicing. Do this in O(log n)
 
 import random
 
@@ -9,7 +9,7 @@ def list_gen():
     rand_list = []
     for num in range(rand_len):
         rand_list.append(num)
-    # print rand_list[-1]
+    print rand_list[-1]
     return rand_list
 
 
@@ -26,31 +26,35 @@ print "The length is " + str(slicing())
 
 # 2. Iterative ===================================================
 
-def len_search(l):
+def upper_bound(l):
     current = 1
-
     while current in l:
         current *= 2
-        if current not in l:
+        if current not in l and current/2 in l:
             upper = current
             lower = current/2
+            return lower, upper
+
+def binary_search(l):
+    lower = (upper_bound(l))[0]
+    upper = (upper_bound(l))[1]
+    middle = (lower+upper)/2
+    while True:
+        if middle in l:
+            lower = middle
             middle = (lower+upper)/2
-            if middle not in l:
-                upper = middle
-                middle = (lower+upper)/2
-                if middle-1 in l:
-                    return middle -1
-            if middle in l:
-                lower = middle
-                middle = (lower+upper)/2
-                if middle+1 not in l:
-                    return middle
-        if current in l and current+1 not in l:
-            return current
+            if middle in l and middle+1 not in l:
+                return middle
+
+        elif middle not in l:
+            upper = middle
+            middle = (lower+upper)/2
+            if middle not in l and middle-1 in l:
+                return middle -1
 
 
-print "Iteratively: " + str(len_search(list_gen()))
-# print len_search(l)
+print "Iteratively: " + str(binary_search(list_gen()))
+
 
 
 
