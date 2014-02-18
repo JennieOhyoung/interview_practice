@@ -2,9 +2,9 @@
 
 def sqrt(n, epsilon):
     upper_x = float(n)
-    lower_x = 0
+    lower_x = 0.0
 
-    if n < 0 or epsilon < 0:
+    if n <= 0 or epsilon <= 0:
         return "Both n and epsilon have be greater than 0"
 
     while True:

@@ -67,7 +67,7 @@ def probe(lst, n):
 
 def binary_search(low, high):
     if high - low == 1:
-        return low
+        return high
     mid = (high + low) / 2
     if probe(lst, mid) == False:
         return binary_search(low, mid)

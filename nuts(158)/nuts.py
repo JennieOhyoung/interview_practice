@@ -59,7 +59,7 @@ The answer is greater than 0 even if C>D*F.
 
 import math
 
-text = raw_input("Which input file would you like to use? ")
+# text = raw_input("Which input file would you like to use? ")
 
 # naive solution with single trips to and from oasis
 def max_nuts(d,n,f,c):
@@ -91,6 +91,14 @@ def max_nuts(d,n,f,c):
 
 # print max_nuts(1000,3000,1,1000)
 
+
+
+
+# d = distance
+# n = kg of nuts
+# f = kg of nut consumed per km
+# c = kg of nuts in carriage
+
 # recursive solution reducing last trip to max x
 def max_nuts2(d,n,f,c):
     if n <= c:
@@ -111,6 +119,7 @@ def max_nuts2(d,n,f,c):
 
     if check_point >= d:
         return n - d*cost_km
+    print remaining_distance, remaining_nuts
     return max_nuts2(remaining_distance, remaining_nuts, f, c)
 
 # print max_nuts2(1000,12000,5,3000)
@@ -144,8 +153,9 @@ def parser(text):
 
 
 
-parser(text)
-
+# parser(text)
+print "naive solution yields: " +str(max_nuts(1000,3000,1,1000))
+print max_nuts2(1000,3000,1,1000)
 
 
 """
