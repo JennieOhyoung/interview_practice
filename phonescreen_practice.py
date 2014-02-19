@@ -2,11 +2,22 @@
 n = "hello world"
 def reverse(n):
     # return n[::-1]
-    temp = n[0]
     n_list = []
     for i in range(len(n)):
         n_list.append(n[-1-i])
     return ''.join(n_list)
+# print reverse(n)
+
+l = [1,2,8,3,5,6]
+def reverse2(l):
+    temp = l[-1]
+    for i in range(len(l)/2):
+        temp = l[-1-i]
+        l[-1-i] = l[i]
+        l[i] = temp
+    return l
+
+print reverse2(l)
 
 
 # Write function to compute Nth fibonacci number
