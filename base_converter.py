@@ -17,6 +17,9 @@ class Stack(object):
         return self.items.pop()
 
 
+####################################################################
+# ITERATIVELY
+
 def base2(num):
     s = Stack()
     binary = ''
@@ -48,3 +51,43 @@ def any_base(num, base):
     return newval
 
 print any_base(40,30)
+
+
+
+####################################################################
+# RECURSIVELY 
+
+#NO STACK!!
+def any_base2(num, base):
+    digits = "0123456789ABCDEF"
+    if num < base:
+        return digits[num]
+    return any_base2(num//base, base) + digits[num%base]
+    
+print any_base2 (700,16)
+
+# WITH STACK
+def 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

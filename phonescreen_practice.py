@@ -16,8 +16,31 @@ def reverse2(l):
         l[-1-i] = l[i]
         l[i] = temp
     return l
+# print reverse2(l)
 
-print reverse2(l)
+# Write a function to check to see if string is a palindrome.
+l1 = "kayak"
+l2 = "Live not on evil"
+l3 = "NoT a PalinDROME"
+l4 = "Madam i'm Adam"
+
+def reverse(l):
+    normalized = l.replace(" ", "").replace("'", "").lower()
+    if normalized == '':
+        return normalized
+    return reverse(normalized[1:]) + normalized[0]
+
+def palindrome(l):
+    if l.replace(" ", "").replace("'", "").lower().strip("'") == reverse(l):
+        return True
+    return False
+
+# print reverse(l1)
+# print reverse(l2)
+print palindrome(l1)
+print palindrome(l2)
+print palindrome(l3)
+print palindrome(l4)
 
 
 # Write function to compute Nth fibonacci number
@@ -98,8 +121,8 @@ def rbg_converter(rbg):
     return ''.join(hex_val)
 
 
-rbg = [233,24, 255]
-print rbg_converter(rbg)
+# rbg = [233,24, 255]
+# print rbg_converter(rbg)
 
 
 
