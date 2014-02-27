@@ -11,13 +11,21 @@ def main1():
 
 # Write a program that prints the numbers from 1 to 100. But for multiples of three print Fizz instead of the number and for the multiples of five print Buzz. For numbers which are multiples of both three and five print FizzBuzz
 
-def fizzbuzz():
-    for i in range(1,100):
-        if i%3 == 0 and i%5 == 0:
-            print str(i) + "FizzBuzz" 
-        elif i%3 == 0:
-            print str(i) + "Fizz"
-        elif i%5 == 0:
-            print str(i) + "Buzz"
+def fizzbuzz(a, b, n):
+    output = []
+    for x in range(1, n+1):
+        if x%a == 0 and x%b == 0:
+            output.append('FB')
+        elif x % a == 0:
+            output.append('F')
+        elif x % b == 0:
+            output.append('B')
+        else: 
+            output.append(str(x))
+        output.append(' ')    
+    print ''.join(output)
+              
 
-# fizzbuzz()
+fizzbuzz(3,5,20)
+fizzbuzz(5,8,50)
+

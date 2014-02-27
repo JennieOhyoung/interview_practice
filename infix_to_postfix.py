@@ -88,8 +88,10 @@ def math(op, op1, op2):
 def postfix_eval(infix):
     s = Stack()
     infix_list = infix.split()
+    print type(infix_list)
 
     for i in infix_list:
+        print type(i)
         if i in "0123456789":
             s.push(int(i))
         else:
@@ -100,6 +102,7 @@ def postfix_eval(infix):
     return s.pop()
 
 
+print postfix_eval(" 3 5 + ")
 print postfix_eval("7 8 + 3 2 + /")
 print postfix_eval("4 8 / 3 6 * ")
 print postfix_eval("17 10 + 3 * 9 / ==")

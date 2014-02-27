@@ -67,7 +67,10 @@ def any_base2(num, base):
 print any_base2 (700,16)
 
 # WITH STACK
-def 
+def any_base3(num, base):
+    digits = "0123456789ABCDEF"
+    s = Stack()
+    
 
 
 
