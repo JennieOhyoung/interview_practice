@@ -19,12 +19,13 @@ And should provide an error message for the following types of errors
 
 We should be able to evaluate a string from the command line in the following way:
 
-$ ruby rpn.rb "1 2 +"
+$ python rpn.py "1 2 +"
+
+In addition, implement your own string to number conversion function and use it in your RPN evaluator. Do not use any built-in method to convert your strings to numbers in your RPN evaluator.
 """
 
 import sys
 
-# implement stack
 class Stack(object):
     def __init__(self):
         self.items = []
@@ -36,6 +37,21 @@ class Stack(object):
         return self.items.pop()
     def isEmpty(self):
         return self.items == []
+
+def str_to_num(string):
+    int_list = []
+    final_num = 0
+    string_list = list(string)
+    for char in string_list:
+        if 48 <= ord(char) <= 57:
+            int_list.append(ord(char)-48)
+        else:
+            return False
+    for i in range(len(int_list)):
+        value = int_list[-i-1]
+        place = 10**i
+        final_num += value*place
+    return final_num
 
 # helper function to perform operations
 def math(operator, first_num, second_num):
@@ -51,11 +67,14 @@ def math(operator, first_num, second_num):
 # separate operants from operators, call helper function on last two items on stack. 
 def postfix_evaluator(equation):
     s = Stack()
+    # equation = (str(equation)).strip("[]'',")
 
     for i in equation:
-        if str(i).isdigit():
-            s.push(int(i))
-        elif str(i) in "+-*/":
+        if i in "[]'',. ":
+            continue
+        elif i.isdigit():
+            s.push(str_to_num(i))
+        elif i in "+-*/":
             second_num = s.pop()
             if not s.isEmpty():
                 first_num = s.pop()
