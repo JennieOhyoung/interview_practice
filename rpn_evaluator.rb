@@ -17,6 +17,8 @@
 #  RUNNING ruby 2.0.0
 
 
+
+# custome string to number conversion. takes array, modify according to place in base 10 system and reassemble as integer by addition.
 def str_to_num(string)
     int_list = []
     final_num = 0
@@ -36,7 +38,7 @@ def str_to_num(string)
     final_num
 end
 
-
+# takes operator (string) and 2 integers and perform basic math operations and returns single integer as result. if used individually, remember to pass in first_num and second_num as integers instead of strings.
 def math(operator, first_num, second_num)
     if operator =="*"
         first_num*second_num
@@ -50,6 +52,7 @@ def math(operator, first_num, second_num)
 end
 
 
+# main function that iterates through equation passed in through argv, if item is number, push to stack until we have an operator to perform the operation. Call math function on previous 3 items and repeat until end of equation. Raises error for invalid number and insufficient arguments.
 def postfix_evaluator(equation)
     stack = []
     for i in equation do
@@ -79,6 +82,4 @@ puts postfix_evaluator equation
 
 
 
-
-# Questions: how come when i iterate over list equation, it won't split up each item in equation?
 
