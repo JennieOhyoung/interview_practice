@@ -15,4 +15,4 @@ def str_to_num(string):
     return final_num
 
 
-print str_to_num("3")
+print str_to_num("89")
