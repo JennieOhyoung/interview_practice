@@ -67,7 +67,7 @@ def deleteDups(linkedlist):
 
 l1 = randomLinkedList(10,3,8)
 print l1
-# deleteDups(l1)
+deleteDups(l1)
 # print l1
-l1.addNode(9)
+# l1.addNode(9)
 print l1
