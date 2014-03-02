@@ -4,6 +4,7 @@ Implement a linked list that can perform the following:
     - add 
     - insert (by index)
     - delete (by index and value)
+    - pop off tail
     - search
     - find size
     - is empty
@@ -83,6 +84,17 @@ class Linked_List(object):
                 if count == index-1:
                     current.next = current.next.next
 
+    def pop(self):
+        if self.head != None:
+            current = self.head
+            while current.next != None:
+                if current.next.next == None:
+                    temp = current.next.data
+                    current.next = None
+                current = current.next
+        return temp
+
+
     def search(self, value):
         if self.head != None:
             current = self.head
@@ -155,16 +167,17 @@ l = Linked_List()
 for x in range(1, 21):
     l.add(x)
 
-l.add(3)
-l.add(10)
+# l.add(3)
+# l.add(10)
 # l.insert("a", 2)
 # l.delete_val(5)
 # print l.search(25)
 # print l.size()
 # print l.is_empty()
-delete_duplicates(l)
+# delete_duplicates(l)
+print l.pop()
 print l.prnt()
-print make_random_ll(10,1,35)
+# print make_random_ll(10,1,35)
 
 
 
