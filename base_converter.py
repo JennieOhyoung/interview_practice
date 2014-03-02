@@ -52,25 +52,35 @@ def any_base(num, base):
 
 print any_base(40,30)
 
+def any_base2(num, base):
+    digits = "0123456789ABCDEF"
+    s = Stack()
+    
+    while num > 0:
+        if num < base:
+            s.push(digits[num])
+        s.push(digits[num%base])
+        n = n//base
+        convert = ""
+        while not s.isEmpty():
+            convert += digits[s.pop()]
+        return convert
+    
 
 
 ####################################################################
 # RECURSIVELY 
 
 #NO STACK!!
-def any_base2(num, base):
+def any_base3(num, base):
     digits = "0123456789ABCDEF"
     if num < base:
         return digits[num]
     return any_base2(num//base, base) + digits[num%base]
     
-print any_base2 (700,16)
+print any_base3 (700,16)
 
-# WITH STACK
-def any_base3(num, base):
-    digits = "0123456789ABCDEF"
-    s = Stack()
-    
+
 
 
 

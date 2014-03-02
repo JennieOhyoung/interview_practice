@@ -1,4 +1,4 @@
-#18. An anagram is a word formed by rearranging the letters of another word, e.g., iceman is an anagram of cinema. We're going to write a method called anagrams_for that takes as its input a word and an array of words, representing a dictionary, and returns an array consisting of all the anagrams of the input word. anagrams_for should return an empty array ([]) if no anagrams are found in the dictionary. You don't have to worry about the order of the returned Array.
+#An anagram is a word formed by rearranging the letters of another word, e.g., iceman is an anagram of cinema. We're going to write a method called anagrams_for that takes as its input a word and an array of words, representing a dictionary, and returns an array consisting of all the anagrams of the input word. anagrams_for should return an empty array ([]) if no anagrams are found in the dictionary. You don't have to worry about the order of the returned Array.
 
 array = ["icetea","iceman","icecream"]
 word = "cinema"
@@ -27,11 +27,31 @@ def anagrams_for2(word, array):
     print word_d
     print sorted_word
 
-
-
-
 print anagrams_for2(word, array)
 
+
+#write a function that determines for each pair if its an anagram or not for each pair of words your function will print to standard output (stdout) the value 1 if the pair is an anagram or 0 otherwise (one result per line) Note that your function will receive the following arguments: firstWords which is an array of strings giving the first word for each of the pairs secondWords which is an array of strings giving the corresponding second word
+
+first_words = ["cinema","host","aba","train"]
+second_words = ["iceman","shot","bab","rain"]
+
+def check_anagrams(first_words, second_words):
+    result = []
+    for i in range(len(first_words)):
+        # if len(str(first_words[i]) != len(str(second_words[i])):
+        #     result.append(0)
+        first_list = list(first_words[i])
+        first_list.sort()
+        second_list = list(second_words[i])
+        second_list.sort()
+        if first_list != second_list:
+            result.append(0)
+        else:
+            result.append(1)
+    return result
+
+
+print check_anagrams(first_words, second_words)
 
 
 

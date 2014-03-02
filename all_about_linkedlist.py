@@ -65,7 +65,7 @@ class Linked_List(object):
                     new_node.next = current.next
                     current.next = new_node
 
-    def delete_val(self, data): #BUG!  NOT DELETING
+    def delete_val(self, data):
         if self.head != None:
             current = self.head
             while current.next != None:
