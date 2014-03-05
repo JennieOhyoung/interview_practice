@@ -60,16 +60,19 @@ class Hashtable(object):
 
 
 
-H = Hashtable()
-H[54]="a"
-H[26]="b"
-H[93]="c"
-H[17]="d"
-H[77]="e"
-H[31]="f"
-H[44]="g"
-H[55]="h"
-H[20]="i"
-print H.slots
-print H[20]
-print H.data
+# H = Hashtable()
+# H[54]="a"
+# H[26]="b"
+# H[93]="c"
+# H[17]="d"
+# H[77]="e"
+# H[31]="f"
+# H[44]="g"
+# H[55]="h"
+# H[20]="i"
+# print H.slots
+# print H[20]
+# print H.data
+
+
+
